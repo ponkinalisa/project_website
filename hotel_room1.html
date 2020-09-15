@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Супер-Люкс</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1'/>
+    <meta content='true' name='HandheldFriendly'/>
+    <meta content='width' name='MobileOptimized'/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content='yes' name='apple-mobile-web-app-capable'/>
+    <link rel="icon" href="img/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="css/rooms.css" type="text/css">
+    <link rel="stylesheet" href="css/general.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+            $("#slider").load("slider.html");
+            $("#popup").load("popup.html");
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div id="popup"></div>
+<div class="grid-gallery">
+    <!-- Container for the image gallery -->
+    <div class="container">
+
+        <div class="mySlides">
+            <img src="img/lux1.jpg" style="width:100%" alt="Кот1" title="Полноразмерная версия Кота1">
+        </div>
+
+        <div class="mySlides">
+            <img src="img/lux2.jpg" style="width:100%" alt="Кот2" title="Полноразмерная версия Кота2">
+        </div>
+
+        <div class="mySlides">
+            <img src="img/lux3.jpg" style="width:100%" alt="Кот3" title="Полноразмерная версия Кота3">
+        </div>
+
+
+        <!-- Thumbnail images -->
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="img/lux1.jpg" style="width:100%;" onclick="currentSlide(1)" alt="Кот1"
+                     title="Миниатюра Кота1">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="img/lux2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Кот2"
+                     title="Миниатюра Кота2">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="img/lux3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Кот3"
+                     title="Миниатюра Кота3">
+            </div>
+        </div>
+    </div>
+    <div class="number-descript">
+        <h3>Супер-Люкс</h3>
+        <ul class="sprite">
+            <li>Площадь – 2,88 м<sup>2</sup></li>
+            <li>Размеры(ШxГxВ) – 180x160x180 см</li>
+            <li>Оснащение номера<span class="bg-bed">Лежак</span><span class="bg-house">Домик</span><span
+                    class="bg-play">Игровой комплекс – 3 яруса</span>
+                <span class="bg-claw">Когтеточка</span>
+
+            </li>
+            <li>Цена за сутки: 600&#8381;</li>
+        </ul>
+        <div class="clear">
+            <a href="#" id="myBtn" class="number-btn order-button"><span class="bron">Забронировать</span></a>
+        </div>
+    </div>
+
+</div>
+<div id="slider"></div>
+<div id="footer"></div>
+<script src="js/gallery.js"></script>
+</body>
+</html>

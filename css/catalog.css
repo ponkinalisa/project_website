@@ -1,0 +1,539 @@
+
+
+div.markup {
+    cursor: pointer;
+}
+.markup > a {
+    text-decoration: none;
+}
+
+.catalog-title > h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+
+div.promo > h1 {
+    font-size: 35px;
+}
+
+div.promo > h1 > span {
+    font-weight: 600;
+    font-size: 50px;
+}
+
+div.stock {
+    margin: 0 40px;
+    margin-top: 100px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+}
+
+.filter-form-item input[type="text"] {
+    height: 25px;
+    width: 25%;
+    outline: none;
+    border: lightgray solid 1px;
+}
+
+.grid-columns {
+    margin: 0 40px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+
+}
+
+.span-row-10 {
+    -ms-grid-row-span: 3;
+    grid-row: span 3 / auto;
+}
+
+.markup {
+    border-radius: 10px;
+    background-color: #fffefd;
+    -webkit-box-shadow: 0 0 10px #cccccc;
+    box-shadow: 0 0 10px #cccccc;
+}
+
+.description-item > h3,
+a.rooms_blocks > h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.description-item {
+    padding-left: 20px;
+}
+
+legend {
+    margin-bottom: 15px;
+}
+
+.filter-form-item {
+    margin-top: 30px;
+}
+
+.filter-form-item:nth-child(1) {
+    margin-top: 0;
+}
+
+a.filter-form-btn,
+a.filter-tablet-btn {
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 20px;
+    border: solid 2px #fac563;
+    border-radius: 30px;
+    color: #000000;
+    background: #ffffff;
+    -webkit-transition: background 0.23s linear;
+    -o-transition: background 0.23s linear;
+    transition: background 0.23s linear;
+}
+
+a.filter-form-btn {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-weight: bold;
+}
+
+a.filter-form-btn:hover {
+    background: #FAC663;
+
+}
+
+a.filter-tablet-btn {
+    text-decoration: none;
+    text-align: center;
+    padding: 13px 35px;
+    border-radius: 30px;
+    color: #000000;
+    background: #ffffff;
+    border: none;
+}
+
+div.clear a.number-btn {
+    margin-left: 0;
+}
+
+.reset {
+    margin-top: 15px;
+}
+
+.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+.sorting {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.sorting input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.sorting:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.sorting input:checked ~ .checkmark {
+    background-color: #fffefd;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.sorting input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.sorting .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid rgba(63, 38, 12, 0.73);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+div.catalog_wrapper {
+    min-width: 320px;;
+}
+
+.sort {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.sort a {
+    margin: 0 30px;
+}
+
+.grid-columns {
+    padding-top: 50px;
+}
+
+div.stock {
+    position: relative;
+}
+
+div.stock > img {
+    width: 100%;
+}
+
+div .promo {
+    position: absolute;
+    top: 20%;
+    left: 27%;
+}
+
+div.promo p {
+    font-size: 18px;
+}
+
+
+div.markup > a > img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+div.markup > img {
+    width: 100%;
+}
+a.rooms_blocks {
+    text-decoration: none;
+    color: black;
+}
+
+span.tooltips {
+    vertical-align: middle;
+    padding-left: 5px;
+    position: relative;
+    display: inline;
+}
+
+span.tooltips span {
+    font-size: 14px;
+    border: 2px solid #fac563;
+    vertical-align: middle;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -76px;
+    position: absolute;
+    width: 120px;
+    color: black;
+    background: #fffefd;
+    line-height: 2.5em;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 6px;
+    padding: 0 5px;
+}
+
+span.tooltips span:after {
+    content: '';
+    position: absolute;
+    top: 83%;
+    left: 45%;
+    width: 15px;
+    height: 15px;
+    background: #fffefd;
+    border: 2px solid #fac563;
+    border-left: none;
+    border-bottom: none;
+    -webkit-transform: rotate(-225deg);
+    -ms-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    z-index: 1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+span:hover.tooltips span {
+    visibility: visible;
+    /*opacity: 0.8;*/
+    bottom: 35px;
+    left: 70%;
+    margin-left: -76px;
+    z-index: 999;
+    box-shadow: 0 0 5px #fac563;
+    -webkit-box-shadow: 0 0 5px #fac563;
+    -moz-box-shadow: 0 0 5px #fac563;
+}
+
+a.filter-tablet-btn {
+    padding: 13px 35px;
+}
+
+a.filter-tablet-btn::before {
+    content: url("../img/funnel.svg");
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+
+/* Modal Content Filter */
+#FilterModal .modal-content {
+    background: url("../img/modal-paw.png") no-repeat left -35px top -15px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px 30px;
+    max-width: 300px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px #cccccc;
+    box-shadow: 0 0 10px #cccccc;
+}
+
+.modal-content > h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #aaaaaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#FilterModal .filter-form {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/*Media queries for the catalog*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .grid-columns {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    a.reset,
+    a.filter-form-btn {
+        width: 50%;
+    }
+
+    #FilterModal a.reset,
+    #FilterModal a.filter-form-btn {
+        width: auto;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+    .grid-columns {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 20px 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .span-row-10 {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+    img.photo_mobile, img.photo_desktop {
+        display: none;
+        height: auto;
+    }
+
+    div.promo {
+        left: 15%;
+        top: 20%;
+    }
+
+}
+
+@media screen and (min-width: 150px) and (max-width: 600px) {
+    img ~ img {
+        visibility: hidden;
+        display: none;
+        height: auto;
+    }
+
+    .grid-columns {
+        margin: 0 10px;
+    }
+
+    div.stock {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    div.promo {
+        left: 25%;
+        top: 25%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    div.promo {
+        left: 15%;
+        top: 20%;
+    }
+
+    div.promo > h1 {
+        font-size: 24px;
+    }
+
+    div.promo > h1 > span {
+        font-size: 37px;
+    }
+
+    div.promo p {
+        font-size: 14px;
+    }
+
+    .sort a {
+        margin: 0 10px;
+    }
+
+    a.filter-tablet-btn {
+        padding: 13px 20px;
+    }
+
+    #FilterModal .modal-content {
+        max-width: 200px;
+    }
+
+    #FilterModal a.reset, a.filter-form-btn {
+        width: auto;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .span-row-10 {
+        display: none;
+    }
+
+    .grid-columns {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    a.filter-tablet-btn {
+        display: none;
+
+    }
+
+    img.photo_mobile, img.photo_tablet {
+        display: none;
+
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+    a.reset,
+    a.filter-form-btn {
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+    div.stock::before {
+        content: '';
+        background-image: url('../img/omg.png');
+        background-repeat: no-repeat;
+        height: 298px;
+        left: -115px;
+        position: absolute;
+        bottom: 0;
+        width: 500px;
+        -webkit-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+        transform: translateY(10%);
+        -webkit-transition: -webkit-transform .3s;
+        transition: -webkit-transform .3s;
+        -o-transition: transform .3s;
+        transition: transform .3s;
+        transition: transform .3s, -webkit-transform .3s;
+        visibility: hidden;
+    }
+
+    div.stock:hover::before {
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        transform: translateY(0px);
+        visibility: visible;
+    }
+    div.markup:hover {
+        -webkit-animation: pulse 3s;
+        animation: pulse 3s;
+    }
+
+}

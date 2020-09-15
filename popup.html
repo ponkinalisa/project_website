@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span id="CloseModal" class="close">×</span>
+        <h3>Забронировать номер</h3>
+        <form class="bron" action="#" method="post">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            <label for="name-pet"></label>
+            <input type="text" id="name-pet" name="name" placeholder="Имя питомца" required>
+            <label for="email"></label>
+            <label for="tel"></label>
+            <input type="tel" name="tel" id="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}" placeholder="Телефон" required>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <div class="date">
+
+                <span class="before-date"> Дата заезда с </span><input type="text" class="date" name="date"  placeholder="26.02.2020">
+
+
+                <span class="after-date"> по </span> <input type="text" name="date" class="date"  placeholder="26.03.2020">
+
+            </div>
+            <div class="clear">
+                <a href="#" id="BtnAnswer" class="number-btn"><span class="bron">Отправить заявку</span></a>
+            </div>
+        </form>
+    </div>
+
+</div>
+<!-- The Modal -->
+<div id="ModalAnswer" class="modal-answer">
+
+    <!-- Modal content -->
+    <div class="modal-content-answer">
+        <span class="close-button">×</span>
+        <h3>Спасибо за заявку!</h3>
+        <p>Мы свяжемся с вами в ближайшее время</p>
+        <div class="clear">
+            <a href="#" id="AnswerOk" class="number-btn"><span class="bron">Ок</span></a>
+        </div>
+    </div>
+
+</div>
+<script>
+    // Get the modal
+    var orderAnswer = document.getElementById('ModalAnswer');
+    var orderModal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btnAnswer = document.getElementById("BtnAnswer");
+    var btnOk = document.getElementById("AnswerOk");
+
+    var orderButtons = document.getElementsByClassName('order-button');
+
+    // Get the <span> element that closes the modal
+    var modalCloseBtn = document.getElementById("CloseModal");
+    var answerCloseBtn = document.getElementsByClassName("close-button")[0];
+
+    for (let orderButton of orderButtons) {
+        orderButton.onclick = function() {
+            orderModal.style.display = "block";
+        }
+    }
+
+    // When the user clicks the button, open the modal
+    btnAnswer.onclick = function() {
+        orderModal.style.display = "none";
+        orderAnswer.style.display = "block";
+    }
+
+    btnOk.onclick = function() {
+        orderAnswer.style.display = "none";
+    }
+
+    modalCloseBtn.onclick = function() {
+        orderModal.style.display = "none";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    answerCloseBtn.onclick = function() {
+        orderAnswer.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == orderAnswer) {
+            orderAnswer.style.display = "none";
+        } else if (event.target == orderModal) {
+            orderModal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+if (/MSIE 10/i.test(navigator.userAgent) || /MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent) || /Edge\/\d./i.test(navigator.userAgent)) {
+    document.write('<style> .feature-item:nth-child(3n-1) { margin-left: 39px; margin-right: 39px; } @media screen and  (min-width: 601px) and (max-width: 1024px) {.features-container .feature-item:nth-child(3n-1) { margin-right: 0; margin-left: 0}  .feature-item {margin: 20px 0} @media screen and (max-width: 600px){.feature-item .feature-video, .feature-item .feature-walks { margin-right: 0; margin-left: 0} .feature-item:nth-child(3n-1) { margin-left: 20px; margin-right: 20px; }}' + '</style>')
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .apartments {
+            background: url("img/fish.png") no-repeat left top 150px;
+        }
+        .apartments >h1 {
+            text-align: center;
+        }
+        .description > h3 {
+            font-weight: 600;
+        }
+        @media screen and (max-width: 500px){
+            .apartments {
+                padding-top: 50px;
+                background: url("img/fish_slider.png") no-repeat left top 100px;
+            }
+            .slider {
+                padding-top: 50px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="apartments">
+    <h1 id="apartments"><a class="flats" href="catalog.html" title="Наши номера">Другие номера</a></h1>
+    <div class="slider">
+        <div class="slider__wrapper">
+            <div class="slider__item">
+                <div class="image-cats">
+                    <img src="img/number1.jpg" alt="Кот в номере 1" title="Кот в номере эконом класса">
+                </div>
+                <div class="description position">
+                    <h3><a href="hotel_room1.html">Эконом плюс</a></h3>
+                    <ul>
+                        <li>Площадь - 0,90 м<sup>2</sup></li>
+                        <li>Размеры(ШxГxВ) - 90x100x180 см</li>
+                        <li>Цена за сутки: 200&#8381;</li>
+                    </ul>
+                    <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="image-cats">
+                    <img src="img/number2.jpg" alt="Кот в номере 2" title="Кот в номере комфорт класса">
+                </div>
+                <div class="description position">
+                    <h3><a href="hotel_room2.html">Комфорт</a></h3>
+                    <ul>
+                        <li>Площадь - 1,13 м<sup>2</sup></li>
+                        <li>Размеры(ШxГxВ) - 100x125x180 см</li>
+                        <li>Цена за сутки: 250&#8381;</li>
+                    </ul>
+                    <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="image-cats">
+                    <img src="img/number3.jpg" alt="Кот в номере 3" title="Кот в номере сьют класса">
+                </div>
+                <div class="description position">
+                    <h3><a href="hotel_room3.html">Сьют</a></h3>
+                    <ul>
+                        <li>Площадь - 1,56 м<sup>2</sup></li>
+                        <li>Размеры(ШxГxВ) - 125x125x180 см</li>
+                        <li>Цена за сутки: 350&#8381;</li>
+                    </ul>
+                    <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
+                </div>
+            </div>
+        </div>
+        <a class="slider__control slider__control_left" href="#" role="button"></a>
+        <a class="slider__control slider__control_right" href="#" role="button"></a>
+    </div>
+</div>
+<script src="js/slider.js"></script>
+</body>
+</html>
