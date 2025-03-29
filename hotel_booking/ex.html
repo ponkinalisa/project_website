@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Rooms</title>
+</head>
+<body>
+
+    <h1>Список номеров</h1>
+    <div id="room-list"></div>
+
+    <script>
+        // Функция для получения данных с сервера
+        async function fetchRooms() {
+            try {
+                const response = await fetch('public/index.php?action=getRooms');  // URL вашего API
+                console.log(response);
+                const data = await response.json();  // Преобразуем ответ в JSON
+
+                // Очищаем контейнер перед вставкой новых данных
+                const roomList = document.getElementById('room-list');
+                roomList.innerHTML = '';
+
+                // Проходим по данным и выводим их на страницу
+                data.forEach(room => {
+                    console.log(room);
+                    const roomElement = document.createElement('div');
+                    roomElement.classList.add('room-item');  // Добавляем CSS-класс для стилей
+                    roomElement.innerHTML = `
+                        <h2>${room.name}</h2>
+                        <p>${room.description}</p>
+                        <p>Цена:$${room.price}</p> `;
+                    roomList.appendChild(roomElement);
+                });
+            } catch (error) {
+                console.error('Ошибка при получении данных:', error);
+            }
+        }
+
+        // Загрузка данных при готовности DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchRooms();
+        });
+    </script>
+<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/197/barnaul/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Барнаул</a><a href="https://yandex.ru/maps/197/barnaul/?ll=83.766195%2C53.348274&utm_medium=mapframe&utm_source=maps&z=14" style="color:#eee;font-size:12px;position:absolute;top:14px;">Барнаул — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?ll=83.766195%2C53.348274&z=14" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+</body>
+</html>

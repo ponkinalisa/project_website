@@ -114,22 +114,9 @@
         </div>
         <div class="apartments">
             <h1 id="apartments"><a class="flats" href="catalog.html" title="Наши номера">Номера</a></h1>
-            <div class="slider">
+            <div class="slider" id="slider">
                 <div class="slider__wrapper">
-                    <div class="slider__item">
-                        <div class="image-cats">
-                            <img src="img/number1.jpg" alt="Кот в номере 1" title="Кот в номере эконом класса">
-                        </div>
-                        <div class="description position">
-                            <h3><a href="hotel_room1.html">Эконом плюс</a></h3>
-                            <ul>
-                                <li>Площадь - 0,90 м<sup>2</sup></li>
-                                <li>Размеры(ШxГxВ) - 90x100x180 см</li>
-                                <li>Цена за сутки: 200&#8381;</li>
-                            </ul>
-                            <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
-                        </div>
-                    </div>
+                    <!--
                     <div class="slider__item">
                         <div class="image-cats">
                             <img src="img/number2.jpg" alt="Кот в номере 2" title="Кот в номере комфорт класса">
@@ -157,7 +144,7 @@
                             </ul>
                             <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <a class="slider__control slider__control_left" href="#" role="button"></a>
                 <a class="slider__control slider__control_right" href="#" role="button"></a>
@@ -257,7 +244,62 @@
     <div id="popup"></div>
 </div>
 
-<!--Slider-->
+<script>
+    async function fetchRooms() {
+            try {
+                const response = await fetch('hotel_booking/public/index.php?action=getRooms');  // URL вашего API
+                const data = await response.json();  // Преобразуем ответ в JSON
+
+                // Очищаем контейнер перед вставкой новых данных
+                const slider = document.getElementsByClassName('slider__wrapper')[0];
+                slider.innerHTML = '';
+
+                // Проходим по данным и выводим их на страницу
+                data.forEach(room => {
+                    const roomElement = document.createElement('div');
+                    roomElement.classList.add('slider__item');  // Добавляем CSS-класс для стилей
+
+                    const image_cats = document.createElement('div');
+                    image_cats.classList.add('image-cats');
+                    var img = new Image();
+                    img.src = room.image_url;
+                    img.style.border = '10px';
+                    image_cats.appendChild(img);
+                    roomElement.appendChild(image_cats);
+
+                    const desc = document.createElement('div');
+                    desc.classList.add('description');
+                    desc.classList.add('position');
+
+                    const h3 = document.createElement('h3');
+                    h3.innerHTML = '<a href="' + room.learn_more_url + ' + ">' + room.name + '</a>';
+                    desc.appendChild(h3);
+
+                    const p = document.createElement('p');
+                    p.innerHTML = room.description;
+                    desc.appendChild(p);
+
+                    const a = document.createElement('p');
+                    a.innerHTML = '<a href="#" class="number-btn order-button"><span>Забронировать</span></a>';
+                    desc.appendChild(a);
+
+                    roomElement.appendChild(desc);
+
+                    if (room.available){
+                        slider.appendChild(roomElement);
+                    }
+                });
+            } catch (error) {
+                console.error('Ошибка при получении данных:', error);
+            }
+        }
+
+        // Загрузка данных при готовности DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchRooms();
+        });
+        
+</script>
 <script src="js/slider.js"></script>
 <!--Edge-->
 <script src="js/edge.js"></script>
@@ -292,5 +334,19 @@
 
     });
 </script>
+<!-- <div class="slider__item">
+                        <div class="image-cats">
+                            <img src="img/number2.jpg" alt="Кот в номере 2" title="Кот в номере комфорт класса">
+                        </div>
+                        <div class="description position">
+                            <h3><a href="hotel_room2.html">Комфорт</a></h3>
+                            <ul>
+                                <li>Площадь - 1,13 м<sup>2</sup></li>
+                                <li>Размеры(ШxГxВ) - 100x125x180 см</li>
+                                <li>Цена за сутки: 250&#8381;</li>
+                            </ul>
+                            <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
+                        </div>
+                    </div>-->
 </body>
 </html>
