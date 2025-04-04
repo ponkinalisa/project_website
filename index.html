@@ -36,7 +36,7 @@
                                                                                 width="63" height="52"
                                                                                 title="Логотип отеля Котейка"></a>
             </div>
-            <!--            Десктопная версия меню-->
+            <!-- Десктопная версия меню-->
             <nav class="top-nav">
                 <ul>
                     <li><a href="#" class="menu-icon" onclick="showSideMenu()"></a></li>
@@ -44,6 +44,8 @@
                     <li><a href="#apartments" class="nav-item" title="Номера">Номера</a></li>
                     <li><a href="#testimonials" class="nav-item" title="Отзывы">Отзывы</a></li>
                     <li><a href="#navigations" class="nav-item" title="Как нас найти">Как нас найти</a></li>
+                    <li><a href="hotel_booking/includes/register_user.php" class="nav-item" title="Регистрация">Регистрация</a></li>
+                    <li><a href="hotel_booking/includes/login_user.php" class="nav-item" title="Войти">Войти</a></li>
                 </ul>
             </nav>
             <!--            Мобильная версиия меню-->
@@ -115,8 +117,8 @@
         <div class="apartments">
             <h1 id="apartments"><a class="flats" href="catalog.html" title="Наши номера">Номера</a></h1>
             <div class="slider" id="slider">
-                <div class="slider__wrapper">
-                    <!--
+                <div class="slider__wrapper" id="slider">
+                    
                     <div class="slider__item">
                         <div class="image-cats">
                             <img src="img/number2.jpg" alt="Кот в номере 2" title="Кот в номере комфорт класса">
@@ -144,7 +146,7 @@
                             </ul>
                             <a href="#" class="number-btn order-button"><span>Забронировать</span></a>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
                 <a class="slider__control slider__control_left" href="#" role="button"></a>
                 <a class="slider__control slider__control_right" href="#" role="button"></a>
@@ -251,7 +253,7 @@
                 const data = await response.json();  // Преобразуем ответ в JSON
 
                 // Очищаем контейнер перед вставкой новых данных
-                const slider = document.getElementsByClassName('slider__wrapper')[0];
+                const slider = document.getElementById('slider');
                 slider.innerHTML = '';
 
                 // Проходим по данным и выводим их на страницу
@@ -270,9 +272,10 @@
                     const desc = document.createElement('div');
                     desc.classList.add('description');
                     desc.classList.add('position');
+                    console.log('<a href="' + room.learn_more_url + '">' + room.name + '</a>');
 
                     const h3 = document.createElement('h3');
-                    h3.innerHTML = '<a href="' + room.learn_more_url + ' + ">' + room.name + '</a>';
+                    h3.innerHTML = '<a href="' + room.learn_more_url + '">' + room.name + '</a>';
                     desc.appendChild(h3);
 
                     const p = document.createElement('p');
@@ -280,7 +283,12 @@
                     desc.appendChild(p);
 
                     const a = document.createElement('p');
-                    a.innerHTML = '<a href="#" class="number-btn order-button"><span>Забронировать</span></a>';
+                    const a1 = document.createElement('a');
+                    a1.innerHTML = '<span>Забронировать</span>';
+                    a1.classList.add('number-btn');
+                    a1.classList.add('order-button');
+                    a1.href = '#';
+                    a.appendChild(a1);
                     desc.appendChild(a);
 
                     roomElement.appendChild(desc);

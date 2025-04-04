@@ -113,10 +113,11 @@ var multiItemSlider = (function () {
             // }
             if (direction === 'right') {
                 _positionLeftItem++;
-                console.log((_positionLeftItem + _wrapperWidth / _itemWidth - 1));
-                if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > _items.length) {
-                    _transform = -_step * _items.length;
-                    _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
+                if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) > position.getMax()) {
+                    nextItem = position.getItemMin();
+                    _items[nextItem].position = position.getMax() + 1;
+                    _items[nextItem].transform += _items.length * 100;
+                    _items[nextItem].item.style.transform = 'translateX(' + _items[nextItem].transform + '%)';
                 }
                 _transform -= _step;
             }
@@ -130,14 +131,6 @@ var multiItemSlider = (function () {
                 }
                 _transform += _step;
             }
-            if (Math.abs(_transform) > _step * _items.length){
-                if (direction === 'right'){
-                    _transform = -_step * _items.length;
-                }else{
-                    _transform = _step * _items.length;
-                }
-            }
-            console.log(Math.abs(_transform) > _step * _items.length, direction);
             _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
         }
 

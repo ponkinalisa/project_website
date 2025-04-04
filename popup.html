@@ -11,25 +11,24 @@
     <div class="modal-content">
         <span id="CloseModal" class="close">×</span>
         <h3>Забронировать номер</h3>
-        <form class="bron" action="#" method="post">
+        <form class="bron" action="hotel_booking/includes/book_room.php" method="post">
             <label for="name"></label>
             <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            <label for="name"></label>
+            <input type="text" id="name" name="name_room" placeholder="Название номера" required>
             <label for="name-pet"></label>
-            <input type="text" id="name-pet" name="name" placeholder="Имя питомца" required>
+            <input type="text" id="name-pet" name="name_pet" placeholder="Имя питомца" required>
             <label for="email"></label>
             <label for="tel"></label>
-            <input type="tel" name="tel" id="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}" placeholder="Телефон" required>
+            <input type="tel" name="tel" id="tel" pattern="[0-9]{11}" placeholder="Телефон" required>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <div class="date">
+                <span class="before-date"> Дата заезда с </span><input type="date" class="date" name="date1"  placeholder="26.02.2020" required>
 
-                <span class="before-date"> Дата заезда с </span><input type="text" class="date" name="date"  placeholder="26.02.2020">
-
-
-                <span class="after-date"> по </span> <input type="text" name="date" class="date"  placeholder="26.03.2020">
-
+                <span class="after-date"> по </span> <input type="date" name="date2" class="date"  placeholder="26.03.2020">
             </div>
             <div class="clear">
-                <a href="#" id="BtnAnswer" class="number-btn"><span class="bron">Отправить заявку</span></a>
+                <input type="submit" value="Отправить заявку" id="BtnAnswer" class="number-btn"><span class="bron"></span></input required>
             </div>
         </form>
     </div>
@@ -64,17 +63,18 @@
     var modalCloseBtn = document.getElementById("CloseModal");
     var answerCloseBtn = document.getElementsByClassName("close-button")[0];
 
+    
     for (let orderButton of orderButtons) {
-        orderButton.onclick = function() {
+        orderButton.addEventListener('click', ()=>{
             orderModal.style.display = "block";
-        }
+        });
     }
 
     // When the user clicks the button, open the modal
     btnAnswer.onclick = function() {
         orderModal.style.display = "none";
         orderAnswer.style.display = "block";
-    }
+    } 
 
     btnOk.onclick = function() {
         orderAnswer.style.display = "none";

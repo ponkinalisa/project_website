@@ -1,5 +1,3 @@
-
-
 @font-face {
     font-family: "LatoRegular";
     src: url("../fonts/LatoRegular/LatoRegular.eot");
@@ -607,11 +605,11 @@ div .social-mobile a:nth-child(2) {
 
 }
 
-#myModal a.number-btn {
+#myModal input.number-btn {
     margin-left: 25%;
 }
 
-#ModalAnswer a.number-btn {
+#ModalAnswer input.number-btn {
     margin-left: 35%;
 }
 
@@ -716,6 +714,26 @@ input.date {
 #myModal,
 #ModalAnswer {
     padding-top: 150px;
+
+}
+
+input.number-btn:hover {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(240, 227, 221)), color-stop(rgba(241, 216, 201, 0.99)), color-stop(rgba(243, 204, 181, 0.97)),
+    color-stop(rgba(244, 193, 161, 0.96)), color-stop(rgba(245, 182, 141, 0.94)), color-stop(rgba(247, 170, 121, 0.93)), color-stop(rgba(248, 159, 100, 0.91)), color-stop(rgba(250, 147, 80, 0.9)),
+    color-stop(rgba(251, 136, 60, 0.88)), color-stop(rgba(252, 125, 40, 0.87)), color-stop(rgba(254, 113, 20, 0.85)), to(rgba(255, 102, 0, 0.84)));
+    background-image: -o-linear-gradient(bottom, rgb(240, 227, 221), rgba(241, 216, 201, 0.99), rgba(243, 204, 181, 0.97),
+    rgba(244, 193, 161, 0.96), rgba(245, 182, 141, 0.94), rgba(247, 170, 121, 0.93), rgba(248, 159, 100, 0.91), rgba(250, 147, 80, 0.9),
+    rgba(251, 136, 60, 0.88), rgba(252, 125, 40, 0.87), rgba(254, 113, 20, 0.85), rgba(255, 102, 0, 0.84));
+    background-image: linear-gradient(to top, rgb(240, 227, 221), rgba(241, 216, 201, 0.99), rgba(243, 204, 181, 0.97),
+    rgba(244, 193, 161, 0.96), rgba(245, 182, 141, 0.94), rgba(247, 170, 121, 0.93), rgba(248, 159, 100, 0.91), rgba(250, 147, 80, 0.9),
+    rgba(251, 136, 60, 0.88), rgba(252, 125, 40, 0.87), rgba(254, 113, 20, 0.85), rgba(255, 102, 0, 0.84));
+}
+
+input.number-btn {
+    width: 50%;
+    background-color: #FF7236;
+    color: #fffefd;
+    margin-left: 30px;
 }
 
 /*Common media queries*/
@@ -912,15 +930,15 @@ input.date {
 }
 
 @media screen and (max-width: 700px) {
-    .description a.number-btn::after {
+    .description input.number-btn::after {
         padding-left: 25px;
     }
 
-    .description a.number-btn {
+    .description input.number-btn {
         margin-left: 0;
     }
 
-    .description a.number-btn > span {
+    .description input.number-btn > span {
         padding-left: 45px;
     }
 
@@ -944,11 +962,11 @@ input.date {
 }
 
 @media screen and (max-width: 500px) {
-    #myModal a.number-btn {
+    #myModal input.number-btn {
         margin-left: 10%;
     }
 
-    #ModalAnswer a.number-btn {
+    #ModalAnswer input.number-btn {
         margin-left: 30%;
     }
 

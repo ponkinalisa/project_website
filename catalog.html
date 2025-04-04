@@ -356,6 +356,66 @@
             modal.style.display = "none";
         }
     }
+
+    async function fetchRooms() {
+            try {
+                const response = await fetch('hotel_booking/public/index.php?action=getRooms');  // URL вашего API
+                const data = await response.json();  // Преобразуем ответ в JSON
+
+                // Очищаем контейнер перед вставкой новых данных
+                const slider = document.getElementById('slider');
+                slider.innerHTML = '';
+
+                // Проходим по данным и выводим их на страницу
+                data.forEach(room => {
+                    const roomElement = document.createElement('div');
+                    roomElement.classList.add('slider__item');  // Добавляем CSS-класс для стилей
+
+                    const image_cats = document.createElement('div');
+                    image_cats.classList.add('image-cats');
+                    var img = new Image();
+                    img.src = room.image_url;
+                    img.style.border = '10px';
+                    image_cats.appendChild(img);
+                    roomElement.appendChild(image_cats);
+
+                    const desc = document.createElement('div');
+                    desc.classList.add('description');
+                    desc.classList.add('position');
+                    console.log('<a href="' + room.learn_more_url + '">' + room.name + '</a>');
+
+                    const h3 = document.createElement('h3');
+                    h3.innerHTML = '<a href="' + room.learn_more_url + '">' + room.name + '</a>';
+                    desc.appendChild(h3);
+
+                    const p = document.createElement('p');
+                    p.innerHTML = room.description;
+                    desc.appendChild(p);
+
+                    const a = document.createElement('p');
+                    const a1 = document.createElement('a');
+                    a1.innerHTML = '<span>Забронировать</span>';
+                    a1.classList.add('number-btn');
+                    a1.classList.add('order-button');
+                    a1.href = '#';
+                    a.appendChild(a1);
+                    desc.appendChild(a);
+
+                    roomElement.appendChild(desc);
+
+                    if (room.available){
+                        slider.appendChild(roomElement);
+                    }
+                });
+            } catch (error) {
+                console.error('Ошибка при получении данных:', error);
+            }
+        }
+
+        // Загрузка данных при готовности DOM
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchRooms();
+        });
 </script>
 <script src="js/btn_top/easing.js" type="text/javascript"></script>
 <!-- UItoTop plugin -->

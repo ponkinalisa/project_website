@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>регистрация админов</title>
+<link rel="stylesheet" href="../../css/admin.css">
+<script>
+    $(function () {
+        $("#header").load("../../header.html");
+        $("#footer").load("../../footer.html");
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div id="popup"></div>
+<form method="post">
+    Логин: <input type="text" name="username" required><br>
+    Пароль: <input type="password" name="password" required><br>
+    E-mail: <input type="email" name="email" required><br>
+    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>"> <!-- Токен CSRF -->
+    <input type="submit" value="Зарегистрировать">
+    <a href='login.php'>Войти</a>
+</form>
+<div id="footer"></div>
+</body>

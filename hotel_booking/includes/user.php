@@ -56,5 +56,19 @@ class User {
             throw new RuntimeException('Ошибка получения пользователя.', 0, $e);
         }
     }
+    public function getUserId($email){
+        if (empty($email)) {
+            throw new InvalidArgumentException('Электронная почта не указана.');
+        }
+
+        $sql = "SELECT id FROM users WHERE email = :email";
+
+        try {
+            return $this->db->fetchOne($sql, ['email' => htmlspecialchars($email)]);
+        } catch (PDOException $e) {
+            throw new RuntimeException('Ошибка получения пользователя.', 0, $e);
+        }
+    }
 }
+
 ?>

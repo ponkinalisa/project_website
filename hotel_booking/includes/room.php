@@ -53,5 +53,11 @@ class Room {
         $sql = "INSERT INTO rooms (name, description, price, image_url) VALUES (:name, :description, :price, :image_url)";
         return $this->db->query($sql, $data);
     }
+
+    // Получение информации о номере
+    public function getRoomByName($name) {
+        $sql = "SELECT * FROM rooms WHERE LOWER(name) = LOWER(:name)";
+        return $this->db->fetchOne($sql, ['name' => $name]);
+    }
 }
 ?>
