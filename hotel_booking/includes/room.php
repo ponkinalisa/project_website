@@ -17,7 +17,7 @@ class Room {
         }
 
         // Валидируем столбец для сортировки
-        $allowedSortColumns = ['price', 'name']; // Дополните список разрешенных столбцов
+        $allowedSortColumns = ['price', 'area']; // Дополните список разрешенных столбцов
         if (!in_array($sortBy, $allowedSortColumns)) {
             throw new InvalidArgumentException("Недопустимый столбец для сортировки: {$sortBy}");
         }
@@ -29,7 +29,7 @@ class Room {
         if (!empty($filters)) {
             foreach ($filters as $column => $value) {
                 $paramName = ":{$column}";
-                $sql .= " AND {$column} = {$paramName}";
+                $sql .= " OR {$column} = {$paramName}";
                 $whereParams[$paramName] = $value;
             }
         }
@@ -50,7 +50,7 @@ class Room {
 
     // Добавление нового номера
     public function addRoom($data) {
-        $sql = "INSERT INTO rooms (name, description, price, image_url) VALUES (:name, :description, :price, :image_url)";
+        $sql = "INSERT INTO rooms (name, description, price, image_url, learn_more_url, area) VALUES (:name, :description, :price, :image_url, :earn_more_url, :area)";
         return $this->db->query($sql, $data);
     }
 
